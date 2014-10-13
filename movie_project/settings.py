@@ -85,10 +85,10 @@ AUTH_USER_MODEL= 'movie_app.Watcher'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'tonghon99@gmail.com'
-EMAIL_HOST_PASSWORD = 'kingkong99'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
-DEFAULT_FROM_EMAIL = 'tonghon99@gmail.com'
+DEFAULT_FROM_EMAIL = ''
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
