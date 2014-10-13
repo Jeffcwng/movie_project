@@ -1,0 +1,184 @@
+{% extends 'base_template.html' %}
+{% load staticfiles %}
+{% block title %} Showtime - Movie Booking {% endblock title %}
+    {% block extra_head %}
+        <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+        <script src="{% static 'js/jquery-ui.js' %}"></script>
+         <script>
+         $(document).ready(function() {
+             $(function () {
+                 $("#accordion").accordion();
+             });
+             $('td').on('click', function () {
+                $(this).css('background-color', '#ff0000')
+             });
+         });
+          </script>
+        <style>
+        td {
+            width: 30px;
+            height: 30px;
+            border: 6px solid #000;
+            border-radius: 12px;
+            background-color: #888;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        </style>
+    {% endblock extra_head %}
+{% block content %}
+<div class="container marketing">
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+        <div class="col-md-3">
+          <img class="featurette-image img-responsive" id="movieimg" style="width: 250px;" src="http://content9.flixster.com/movie/10/93/90/10939047_ori.jpg">
+        </div>
+        <div class="col-md-9" style="margin-top: -50px;">
+          <h1>Pick your seat. <span class="text-muted"> Select showtime and seating.</span></h1>
+
+            <!-- jquery UI accordion  -->
+           <div id="accordion">
+          <h3>12:00pm - 3:00pm</h3>
+          <div>
+            <p align="center">screen</p><hr>
+            <table align="center" width="90%" border="0" cellspacing="2" cellpadding="2">
+              <tr>
+                <td align="center" valign="middle">A1</td>
+                <td align="center" valign="middle">A2</td>
+                <td align="center" valign="middle">A3</td>
+                <td align="center" valign="middle">A4</td>
+                <td align="center" valign="middle">A5</td>
+                <td align="center" valign="middle">A6</td>
+                <td align="center" valign="middle">A7</td>
+                <td align="center" valign="middle">A8</td>
+                <td align="center" valign="middle">A9</td>
+                <td align="center" valign="middle">A10</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">B1</td>
+                <td align="center" valign="middle">B2</td>
+                <td align="center" valign="middle">B3</td>
+                <td align="center" valign="middle">B4</td>
+                <td align="center" valign="middle">B5</td>
+                <td align="center" valign="middle">B6</td>
+                <td align="center" valign="middle">B7</td>
+                <td align="center" valign="middle">B8</td>
+                <td align="center" valign="middle">B9</td>
+                <td align="center" valign="middle">B10</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">C1</td>
+                <td align="center" valign="middle">C2</td>
+                <td align="center" valign="middle">C3</td>
+                <td align="center" valign="middle">C4</td>
+                <td align="center" valign="middle">C5</td>
+                <td align="center" valign="middle">C6</td>
+                <td align="center" valign="middle">C7</td>
+                <td align="center" valign="middle">C8</td>
+                <td align="center" valign="middle">C9</td>
+                <td align="center" valign="middle">C10</td>
+              </tr>
+            </table>
+          </div>
+          <h3>4:00pm - 7:00pm</h3>
+                  <div>
+            <p align="center">screen</p><hr>
+            <table align="center" width="90%" border="0" cellspacing="2" cellpadding="2">
+              <tr>
+                <td align="center" valign="middle">A1</td>
+                <td align="center" valign="middle">A2</td>
+                <td align="center" valign="middle">A3</td>
+                <td align="center" valign="middle">A4</td>
+                <td align="center" valign="middle">A5</td>
+                <td align="center" valign="middle">A6</td>
+                <td align="center" valign="middle">A7</td>
+                <td align="center" valign="middle">A8</td>
+                <td align="center" valign="middle">A9</td>
+                <td align="center" valign="middle">A10</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">B1</td>
+                <td align="center" valign="middle">B2</td>
+                <td align="center" valign="middle">B3</td>
+                <td align="center" valign="middle">B4</td>
+                <td align="center" valign="middle">B5</td>
+                <td align="center" valign="middle">B6</td>
+                <td align="center" valign="middle">B7</td>
+                <td align="center" valign="middle">B8</td>
+                <td align="center" valign="middle">B9</td>
+                <td align="center" valign="middle">B10</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">C1</td>
+                <td align="center" valign="middle">C2</td>
+                <td align="center" valign="middle">C3</td>
+                <td align="center" valign="middle">C4</td>
+                <td align="center" valign="middle">C5</td>
+                <td align="center" valign="middle">C6</td>
+                <td align="center" valign="middle">C7</td>
+                <td align="center" valign="middle">C8</td>
+                <td align="center" valign="middle">C9</td>
+                <td align="center" valign="middle">C10</td>
+              </tr>
+            </table>
+          </div>
+          <h3>8:00pm - 11:00pm</h3>
+                   <div>
+            <p align="center">screen</p><hr>
+            <table align="center" width="90%" border="0" cellspacing="2" cellpadding="2">
+              <tr>
+                <td align="center" valign="middle">A1</td>
+                <td align="center" valign="middle">A2</td>
+                <td align="center" valign="middle">A3</td>
+                <td align="center" valign="middle">A4</td>
+                <td align="center" valign="middle">A5</td>
+                <td align="center" valign="middle">A6</td>
+                <td align="center" valign="middle">A7</td>
+                <td align="center" valign="middle">A8</td>
+                <td align="center" valign="middle">A9</td>
+                <td align="center" valign="middle">A10</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">B1</td>
+                <td align="center" valign="middle">B2</td>
+                <td align="center" valign="middle">B3</td>
+                <td align="center" valign="middle">B4</td>
+                <td align="center" valign="middle">B5</td>
+                <td align="center" valign="middle">B6</td>
+                <td align="center" valign="middle">B7</td>
+                <td align="center" valign="middle">B8</td>
+                <td align="center" valign="middle">B9</td>
+                <td align="center" valign="middle">B10</td>
+              </tr>
+              <tr>
+                <td align="center" valign="middle">C1</td>
+                <td align="center" valign="middle">C2</td>
+                <td align="center" valign="middle">C3</td>
+                <td align="center" valign="middle">C4</td>
+                <td align="center" valign="middle">C5</td>
+                <td align="center" valign="middle">C6</td>
+                <td align="center" valign="middle">C7</td>
+                <td align="center" valign="middle">C8</td>
+                <td align="center" valign="middle">C9</td>
+                <td align="center" valign="middle">C10</td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+
+        </div>
+</div>
+
+<hr class="featurette-divider">
+
+</div>
+
+{% endblock content %}
+
+{% block foot %}
+
+{% endblock foot %}

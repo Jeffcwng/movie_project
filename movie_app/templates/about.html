@@ -1,0 +1,30 @@
+{% extends 'base_template.html' %}
+{% load staticfiles %}
+{% block title %} About - Movie Booking {% endblock title %}
+    {% block extra_head %}
+
+    {% endblock extra_head %}
+{% block content %}
+<div class="container marketing">
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="500x500" style="opacity: 0.8;" src="{% static 'img/movie_ticket_lg.png' %}">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">ABOUT: it's that good. <span class="text-muted">See for yourself.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
+        </div>
+</div>
+
+<hr class="featurette-divider">
+
+</div>
+
+{% endblock content %}
+
+{% block foot %}
+
+{% endblock foot %}

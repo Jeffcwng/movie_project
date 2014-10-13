@@ -1,0 +1,32 @@
+{% extends 'base_template.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<p><br /></p><p><br /></p><p><br /></p>
+<div class="container">
+
+
+<hr>
+<h2>Movie</h2>
+    {% for movie in movies %}
+         <br>
+         <a style="font-size: 18px; background-color: #eee; padding: 8px; width: 300px; border-radius: 4px;" href="{% url 'view_movie' movie.id %}">{{ movie.movie_name }}</a>
+       <br>
+
+    {% endfor %}
+
+<br>
+<br>
+
+
+<hr>
+
+<a href="{% url "add_movie" %}" class="btn btn-primary">add movie</a>
+&nbsp;&nbsp;
+<a href="{% url "home" %}" class="btn btn-primary" >Back to home</a>
+
+</div>
+
+
+{% endblock content %}

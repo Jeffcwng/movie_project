@@ -1,0 +1,51 @@
+{% extends 'base_template.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+    <p><br /></p><p><br /></p><p><br /></p>
+<div class="container" id="seats">
+
+
+<hr>
+<h2>Seat</h2> chart for {{ seat.show_num.show_section }} at {{ seat.show_num.show_section }}
+
+<br><br>
+
+<div align="center" style="font-size: 18px; background-color: #777; width: 420px; padding: 8px; border-radius: 4px; color: #245269;">screen</div>
+
+
+
+<table>
+
+    <tr>
+{% for seat in seats %}
+   <td><br>
+         <a style="font-size: 18px; background-color: #eee; padding: 8px; border-radius: 4px;" href="{% url 'view_seat' seat.id %}">{{ seat.seat_num }}</a>
+       <br></td>
+   {% if forloop.last %}
+     </tr>
+   {% else %}
+     {% if forloop.counter|divisibleby:"10" %}
+       </tr><tr>
+     {% endif %}
+   {% endif %}
+{% endfor %}
+</table>
+
+<br /><br />
+
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
+
+<br />
+
+<hr>
+<a href="{% url "add_seat" %}" class="btn btn-primary">add seat</a>
+&nbsp;&nbsp;
+<a href="{% url "home" %}" class="btn btn-primary" >Back to home</a>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,61 @@
+{% extends 'base_template.html' %}
+{% load staticfiles %}
+{% block title %} Movies - Movie Booking {% endblock title %}
+    {% block extra_head %}
+        <script src="{% static 'js/movie.js' %}"></script>
+
+        <style>
+        #movie_display {
+         /* Chrome, Safari, Opera */
+            -webkit-column-count: 4;
+            -webkit-column-gap: 20px;
+            -webkit-column-rule-style: outset;
+            -webkit-column-rule-width: 0px;
+
+            /* Firefox */
+            -moz-column-count: 4;
+            -moz-column-gap: 20px;
+            -moz-column-rule-style: outset;
+            -moz-column-rule-width: 0px;
+
+            column-count: 4;
+            column-gap: 20px;
+            column-rule-style: outset;
+            column-rule-width: 0px;
+
+        }
+
+        #img {
+            cursor: pointer;
+        }
+        </style>
+
+    {% endblock extra_head %}
+{% block content %}
+<div class="container" style="padding-top: 100px;">
+
+
+
+<div class="row">
+    <div class="col-xs-4">
+    <input class="form-control" id="search" type="text" placeholder="MOVIE LOOKUP">
+    </div>
+    <div class="col-xs-4">
+        <button class="btn btn-success" id="searchmovie"><span class="glyphicon glyphicon-search"> Search </span></button>
+    </div>
+
+</div>
+<hr class="featurette-divider">
+
+<div align="center" class="row" id="movie_display">
+
+
+</div>
+
+
+
+{% endblock content %}
+
+{% block foot %}
+
+{% endblock foot %}

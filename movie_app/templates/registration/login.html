@@ -1,0 +1,41 @@
+
+{% extends "base_template.html" %}
+{% load staticfiles %}
+
+{% block title %}Login page{% endblock title %}
+    {% block extra_head %}
+
+    {% endblock extra_head %}
+
+{% block content %}
+
+    <p><br /></p><p><br /></p><p><br /></p>
+    <div class="container">
+
+    <hr class="featurette-divider">
+
+    <div style="width: 400px; padding: 10px; color: #555;">
+        <form method="post" action="." class="form-signin" role="form">
+        {% csrf_token %}
+{#        {{ form.as_p }}#}
+
+        <table width="100%" border="0" cellspacing="5" cellpadding="5">
+        {% for field in form %}
+
+           <tr><td style="padding: 5px;" width="90" align="right" valign="top">{{ field.label_tag }}</td>
+           <td align="left" valign="top"><span style="padding-left: 10px;">{{ field }}</span></td></tr>
+
+        {% endfor %}
+        </table>
+        <br>
+
+
+        <input class="btn btn-primary" role="button" type="submit" value="Log in">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        Not member? <a href="{% url 'register' %}" class="btn btn-default" role="button">Register</a>
+
+        </form>
+
+    </div>
+    </div>
+{% endblock %}

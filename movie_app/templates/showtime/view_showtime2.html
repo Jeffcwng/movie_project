@@ -1,0 +1,29 @@
+{% extends 'base_template.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+    <p><br /></p><p><br /></p><p><br /></p>
+<div class="container">
+
+
+
+<hr>
+<h2>{{ showtime.section}}</h2>
+<br>
+
+<p style="font-size: 18px; background-color: #777; padding: 8px; width: 300px; border-radius: 4px;">
+    movie ::: <strong>{{ showtime.show_section }}</strong> at {{ showtime.show_section.movie }}</p>
+
+<hr>
+
+<a href="{% url "showtime" %}" class="btn btn-primary">Back to showtime</a>&nbsp;&nbsp;
+<a href="{% url "home" %}" class="btn btn-primary">Back to home</a>&nbsp;&nbsp;
+
+
+
+
+</div>
+
+{% endblock content %}

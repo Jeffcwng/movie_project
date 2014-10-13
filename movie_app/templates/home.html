@@ -1,0 +1,101 @@
+{% extends 'base_template.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<!-- Carousel
+    ================================================== -->
+{#    <div class="bs-example">#}
+    <div id="myCarousel" class="carousel slide" data-interval="2400" data-ride="carousel">
+    	<!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+       <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="active item">
+                <img src={% static 'img/bnr_movie01.jpg' %}>
+                <div class="carousel-caption">
+                  <h1 align="left"><strong>Explore the premiere</strong></h1>
+                  <p align="left">Behind the scenes with the cast</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src={% static 'img/bnr_movie02.jpg' %}>
+                <div class="carousel-caption">
+                   <h1 align="left"><strong>Ethan Hunt comes face to face</strong></h1>
+                  <p align="left">with a dangerous dealer while trying to keep<br>his identiy secret in order to protect his girlfriend</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src={% static 'img/bnr_movie03.jpg' %}>
+                <div class="carousel-caption">
+                  <h1 align="left"><strong>Which movie will you watch this weekend?</strong></h1>
+                  <p></p>
+                </div>
+            </div>
+            <div class="item">
+                <img src={% static 'img/bnr_movie04.jpg' %}>
+                <div class="carousel-caption">
+                  <h1 align="left"><strong>Years after a plague kills</strong></h1>
+                  <p align="left">most of humanity and transforms the rest into monsters</p>
+                </div>
+            </div>
+             <div class="item">
+                <img src={% static 'img/bnr_movie05.jpg' %}>
+                <div class="carousel-caption">
+                   <h1 align="left"><strong>Following the Normandy Landings</strong></h1>
+                  <p align="left">a group of U.S. soldiers go behind enemy lines<br>to retrieve a paratrooper whose brothers have been killed in action</p>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+{#    </div>#}
+<!-- END Carousel
+    ================================================== -->
+
+    <div class="container">
+
+
+    <div class="row">
+
+        <div class="col-lg-6">
+          <h1>Welcome to Book My Movie.</h1>
+
+          <p>Please login or register an account to continue.</p>
+{#          <p><a class="btn btn-primary" href="#" role="button">View details »</a></p>#}
+        </div>
+        <div class="col-lg-3">&nbsp;</div>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <form class="form-signin" role="form">
+                <h2 class="form-signin-heading" align="center">Please sign in</h2>
+{#                <input type="email" class="form-control" placeholder="Email address" required="" autofocus="">#}
+{#                <br>#}
+{#                <input type="password" class="form-control" placeholder="Password" required="">#}
+{#                <br>#}
+                <a href="/login/" class="btn btn-lg btn-primary btn-block">Sign in</a>
+                <h2 class="form-signin-heading" align="center"> - or - </h2>
+                <a href="/register/" class="btn btn-lg btn-primary btn-block">Register</a>
+            </form>
+        </div>
+
+
+
+    </div>
+    </div>
+
+{% endblock content %}
+
+{% block foot %}
+
+{% endblock foot %}

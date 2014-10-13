@@ -1,0 +1,58 @@
+{% extends 'base_template.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+    <p><br /></p><p><br /></p><p><br /></p>
+<div class="container">
+
+
+
+<hr>
+<h2>{{ seat.seat_num}}</h2>
+<br>
+
+<p style="font-size: 18px; background-color: #777; padding: 8px; width: 300px; border-radius: 4px;">
+    ticket info: {{ seat.show_num }} for {{ seat.user }} watching {{ seat.show_num.show_section }}
+    at {{ seat.show_num.show_section.cinema }}
+</p>
+
+
+    <br /><br />
+{#############################}
+{#<form action="" method="POST">#}
+{#    {% csrf_token %}#}
+{#  <script#}
+{#    src="https://checkout.stripe.com/checkout.js" class="stripe-button"#}
+{#    data-key="pk_test_U4hFELFLr9r3rWgv963VKHUv"#}
+{#    data-amount="1100"#}
+{#    data-name="Demo Site"#}
+{#    data-description="($11.00 per ticket)"#}
+{#    data-image="/128x128.png">#}
+{#  </script>#}
+{#</form>#}
+{#############################}
+{##}
+    <form id="checkout" method="post" action="/create_transaction/">
+        {% csrf_token %}
+  <div id="dropin"></div>
+{#  <input class="btn btn-primary" role="button" type="submit" value="Buy ticket">#}
+      <a href="{% url "payment" %}" class="btn btn-primary">Buy ticket</a>
+
+</form>
+
+<br />
+
+
+<hr>
+
+<a href="{% url "seat" %}" class="btn btn-primary">Back to seat</a>&nbsp;&nbsp;
+<a href="{% url "home" %}" class="btn btn-primary">Back to home</a>&nbsp;&nbsp;
+
+
+
+
+</div>
+
+{% endblock content %}

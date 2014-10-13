@@ -1,0 +1,33 @@
+{% extends 'base_template.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+    <p><br /></p><p><br /></p><p><br /></p>
+<div class="container">
+
+
+<hr>
+<h2>Showtime</h2>
+    {% for showtime in showtimes %}
+         <br>
+         <a style="font-size: 18px; background-color: #eee; padding: 8px; width: 300px; border-radius: 4px;" href="{% url 'view_showtime' showtime.id %}">
+             {{ showtime.section }} for movie ::: <strong>{{ showtime.show_section }} </strong></a>
+       <br>
+
+    {% endfor %}
+
+<br>
+<br>
+
+
+<hr>
+
+<a href="{% url "add_showtime" %}" class="btn btn-primary">add showtime</a>
+&nbsp;&nbsp;
+<a href="{% url "home" %}" class="btn btn-primary" >Back to home</a>
+
+</div>
+
+{% endblock content %}

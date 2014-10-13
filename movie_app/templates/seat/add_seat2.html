@@ -1,0 +1,38 @@
+{% extends 'base_template.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+    <p><br /></p><p><br /></p><p><br /></p>
+<div class="container">
+
+
+<h3>add seat</h3>
+
+<form method="post" class="form" role="form">
+
+{% csrf_token %}
+
+    {#{{ form.as_p }}#}
+
+    <table width="100%" border="0" cellspacing="5" cellpadding="5">
+    {% for field in form %}
+
+           <tr><td style="padding: 5px;" width="100" align="right" valign="top">{{ field.label_tag }}</td>
+           <td align="left" valign="top"><span style="padding-left: 10px;">{{ field }}</span></td></tr>
+    {% endfor %}
+    </table>
+
+
+    <input class="btn btn-primary" role="button" type="submit" value="add seat">
+
+
+</form>
+<hr>
+</div>
+
+
+
+
+{% endblock content %}
