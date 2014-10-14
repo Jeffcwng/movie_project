@@ -17,6 +17,7 @@ from django.contrib.auth import REDIRECT_FIELD_NAME, login as auth_login
 from django.utils.http import is_safe_url
 from django.shortcuts import resolve_url
 
+# it's better not to have this globally in your file, but call it before you run braintree code
 braintree.Configuration.configure(braintree.Environment.Sandbox,
                                       merchant_id="b2t64c23842v23fk",
                                       public_key="dbrbtktrfttfyryp",
@@ -27,6 +28,7 @@ braintree.Configuration.configure(braintree.Environment.Sandbox,
 def home(request):
     return render(request, "home.html")
 
+# Shouldn't be using @csrf_exempt on all of the views!
 @csrf_exempt
 def about(request):
     return render(request, "about.html")
@@ -116,6 +118,7 @@ def showtime(request):
 
 @csrf_exempt
 def view_showtime(request, showtime_id):
+    # what happens if someone gives you a bad showtime_id?
     showtime = Showtime.objects.get(id=showtime_id)
     data = {'showtime': showtime}
     return render(request, "showtime/view_showtime2.html", data)
@@ -197,7 +200,9 @@ def error(request):
 
 @csrf_exempt
 def create_transaction(request):
-
+    # This view needs to take in more information about the movie/showtime/seat that
+    # the user is purchasing the ticket for. This way you can also pull out the proper
+    # amount to charge them and then properly save that they bought that ticket.
     if request.method == "POST":
         result = braintree.Transaction.sale({
             "amount": "9.75",
