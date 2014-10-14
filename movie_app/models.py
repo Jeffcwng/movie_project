@@ -51,6 +51,7 @@ class Seat(models.Model):
 
 class Ticket(models.Model):
     seat_ticket = models.ForeignKey(Watcher, null=True, related_name='user_tickets')
-    # shouldn't a ticket be for a specific seat, not a movie?
+    # shouldn't a ticket be for a specific seat or showtime, not a movie?
+    # By tying a Watcher to a Seat, do we even need to have a "Ticket" model?
     for_movie = models.ForeignKey(Movie, null=True, related_name='seats')
     paid = models.BooleanField(default=False)
